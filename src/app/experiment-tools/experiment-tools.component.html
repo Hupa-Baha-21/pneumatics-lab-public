@@ -1,0 +1,23 @@
+<ng-container  *ngIf="pageType === 'experiment' else toolbox">
+    <div class="experiment-tools">
+        <div class="page-title">{{ experiment.name }}</div>
+        <div class="page-subtitle">רכיבים</div>
+        <div class="tools-container">
+            <div *ngFor="let tool of ( data.tools | filterTools:experiment.title )" class="tool-container" >
+                <app-experiment-tool [tool]="tool" ></app-experiment-tool>
+            </div>
+        </div>
+        <app-back-btn *ngIf="pageType === 'experiment'"></app-back-btn>
+    </div>
+</ng-container>
+
+<ng-template #toolbox>
+    <div class="experiment-tools">
+        <div class="page-title">ארגז כלים</div>
+        <div class="tools-container toolbox-container">
+            <div *ngFor="let tool of data.tools" class="tool-container" >
+                <app-experiment-tool [tool]="tool" ></app-experiment-tool>
+            </div>
+        </div>
+    </div>
+</ng-template>

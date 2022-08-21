@@ -1,0 +1,41 @@
+<div class="top-bar">
+    <span class="material-symbols-outlined burger-icon" (click)="sideMenu()">
+        {{ sideMenuOpen ? 'close': 'menu'}}
+    </span>
+    <p (click)="navigateTo('')" class="main-title">מעבדת<br />פנאומטיקה</p>
+    <div class="black-div" [class]="sideMenuOpen ? 'black-open' : 'black-close'"  (click)="closeSideMenu()"></div>
+    <ul class="navbar-list" [class]="sideMenuOpen ? 'menu-open' : 'menu-close'">
+        <span *ngFor="let pageType of content" >
+            <li class="navbar-title-container">
+                <div class="navbar-title">
+                    <span (click)="navigateTo(pageType.title)">{{ pageType.name }}</span>
+                    <span class="material-symbols-outlined expand-icon">
+                        expand_more
+                    </span>
+                </div>
+                <ul class="dropdown-container">
+                    <span *ngFor="let content of pageType.content">
+                        <li class="navbar-subtitle-container" [class.open-container]="droppableContent[content.title]">
+                            <div class="main-dropdown dropdown-item">
+                                <span (click)="navigateTo(pageType.title + '/' + content.title)">{{ content.name }}</span>
+                                <span *ngIf="content.experimentInfo" class="material-symbols-outlined expand-icon" (click)="droppableContent[content.title] = !droppableContent[content.title]">
+                                    {{ droppableContent[content.title] ? 'expand_less' : 'expand_more' }}
+                                </span>
+                            </div>
+                            <ul class="secondary-dropdown" *ngIf="content.experimentInfo">
+                                <li (click)="navigateTo(pageType.title + '/' + content.title + '/tools')" class="dropdown-item">כלים</li>
+                                <li (click)="navigateTo(pageType.title + '/' + content.title + '/steps')" class="dropdown-item">מהלך הניסוי</li>
+                            </ul>
+                        </li>
+                    </span>
+                </ul>
+            </li>
+        </span>
+        <li (click)="navigateTo('toolbox')"  class="navbar-title">ארגז כלים</li>
+    </ul>
+
+    <div class="logos-container">
+        <img class="logoImg" src='./assets/media/hupaLogo.png'/>
+        <img class="logoImg" src="./assets/media/baha21Logo.png"/>
+    </div>
+</div>

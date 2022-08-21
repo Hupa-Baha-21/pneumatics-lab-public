@@ -1,0 +1,4 @@
+<div *ngIf="tool.hasSketch" class="sketch-container">
+    <img src="../../assets/media/tools/{{tool.title}}.png" alt="controlValve">
+</div>
+<div [class]="tool.hasSketch ? 'tool-name-with-sketch' : 'tool-name-without-sketch'">{{ tool.name }}</div>

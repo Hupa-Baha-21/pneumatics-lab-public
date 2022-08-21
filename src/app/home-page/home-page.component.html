@@ -1,0 +1,42 @@
+<div class="home-page">
+    <div class="page-title">מעבדת<br />פנאומטיקה</div>
+    <div class="white-circle"></div>
+    <div class="content">
+        <div class="btns-container">
+            <button
+                routerLink="introduction"
+                class="study-btn"
+                id="gabi-btn"
+                (mouseenter)="isGabiHovered = true"
+                (mouseleave)="isGabiHovered = false"
+            >
+                היכרות
+            </button>
+            <button
+                routerLink="experiments"
+                class="study-btn"
+                id="leon-btn"
+                (mouseenter)="isLeonHovered = true"
+                (mouseleave)="isLeonHovered = false"
+            >
+                ניסויים
+            </button>
+            <img
+                routerLink="introduction"
+                class="student-img"
+                [class.upAndDownAnimation]="isGabiHovered"
+                src='../../assets/media/gabi.png'
+            />
+            <img
+                routerLink="experiments"
+                class="student-img"
+                [class.upAndDownAnimation]="isLeonHovered"
+                src='../../assets/media/leon.png'
+            />
+        </div>
+            <div routerLink="toolbox" class="toolbox-container">
+                <img src='../../assets/media/toolbox.png' />
+                <p>ארגז כלים</p>
+            </div>
+    </div>
+</div>

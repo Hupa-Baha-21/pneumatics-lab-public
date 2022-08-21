@@ -1,0 +1,14 @@
+<div *ngIf="experiment" class="experiment-main">
+    <div class="page-title">{{ experiment.name }}</div>
+    <div class="experiment-description">
+        <p>{{ experimentDescriptionData.contentText }}</p>
+        <img class="description-graph" *ngIf="experimentDescriptionData.graph" src="../../assets/media/graphs/{{experiment.title}}.png">
+    </div>
+    <div class="blue-circle">
+        <div class="buttons-container">
+            <div routerLink="tools" class="experiment-details-btn tools-btn">רכיבים</div>
+            <div routerLink="steps" class="experiment-details-btn steps-btn">מהלך הניסוי</div>
+        </div>
+    </div>
+    <app-back-btn [arrowColor]="'#88c7db'"></app-back-btn>
+</div>

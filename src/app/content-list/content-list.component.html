@@ -1,0 +1,18 @@
+<div *ngIf="contentType" class="experiments-list">
+    <div>
+        <div class="page-title">{{contentType.pageTitle}}</div>
+        <div class="white-bg">
+            <div class="blue-circle"></div>
+        </div>
+        <div class="content-container">
+            <div class="btns-container">
+                <app-content-btn
+                *ngFor="let item of contentType.content" 
+                [itemName]="item.name"
+                routerLink="{{item.title}}"
+                ></app-content-btn>
+            </div>
+            <img class='student-img' src='{{"../../assets/media/"+ contentType.character +"-cropped.png"}}' />
+        </div>
+    </div>
+</div>

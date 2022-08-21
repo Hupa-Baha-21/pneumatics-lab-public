@@ -1,0 +1,83 @@
+@import "details.scss";
+
+.experiments-list {
+
+    .white-bg {
+        inset: 0 0 0 0;
+        background-color: white;
+        position: fixed;
+        z-index: -2;
+    }
+    
+    .blue-circle {
+        width: 100vw;
+        background-color: $bg-blue;
+        height: 160px;
+        border-radius: 100%;
+        margin: 0 auto;
+        z-index: -1;
+        position: fixed;
+        transform: scaleX(1.2);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 100% 10rem;
+        border-bottom-left-radius: 100% 10rem;
+    }
+    
+    .content-container {
+        margin-top: 180px;
+        height: calc(100vh - 180px);
+        display: grid;
+        grid-template-rows: auto auto;
+    
+        .btns-container {
+            padding-top: 1rem;
+            width: 100%;
+            overflow-y: auto;
+        }
+        
+        
+        .grade-btn {
+            padding: 0.5rem 1.7rem;
+            background-color: $bg-blue;
+            font-size: 1rem;
+            border-radius: $button-border-radius;
+            border: none;
+            text-align: center;
+            font-weight: 500;
+            display: block;
+            margin: 5rem auto;
+        }
+
+        .student-img {
+            margin: 0 auto;
+            text-align: center;
+            width: 10rem;
+            align-self: end;
+        }
+    }
+    
+    @media (orientation: landscape) and (min-height: 790px) {
+    
+    
+    }
+    
+    @media (orientation: landscape) {
+        .blue-circle {
+            height: 190px;
+        }
+    
+        .content-container {
+            margin-top: 215px;
+            height: calc(100vh - 215px);
+            
+            .btns-container {
+                padding-top: 6rem;
+                margin-top: unset;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    
+    }
+}

@@ -1,0 +1,75 @@
+@import 'details.scss';
+
+$circle-size: 9.5rem;
+$grid-gap: 4rem;
+
+.sketch-container {
+    color: $primary-text;
+    width: $circle-size;
+    height: calc($circle-size / 2);
+    border-top-left-radius: calc($circle-size * 2);
+    border-top-right-radius: calc($circle-size * 2);
+    padding: 15px 1.8rem 5px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.tool-name-with-sketch {
+    width: $circle-size;
+    height: calc($circle-size / 2);
+    border-bottom-left-radius: calc($circle-size * 2);
+    border-bottom-right-radius: calc($circle-size * 2);
+    text-align: center;
+    padding: 10px 1rem 0px;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.tool-name-without-sketch {
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 100%;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+@media (orientation: landscape) {
+    $circle-size: 12rem;
+    $grid-gap: 4rem;
+
+    .sketch-container {
+        width: $circle-size;
+        height: calc($circle-size / 2);
+        border-top-left-radius: calc($circle-size * 2);
+        border-top-right-radius: calc($circle-size * 2);
+
+    }
+
+    .tool-name-with-sketch {
+        width: $circle-size;
+        height: calc($circle-size / 2);
+        border-bottom-left-radius: calc($circle-size * 2);
+        border-bottom-right-radius: calc($circle-size * 2);
+        font-size: 1.2rem;
+    }
+
+    .tool-name-without-sketch {
+        width: $circle-size;
+        height: $circle-size;
+        font-size: 1.5rem;
+    }
+}

@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+
+@import "details.scss";
+
+
+body, html {
+    height: 100%;
+}
+
+* {
+    font-family: 'Heebo', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background-color: $bg-blue;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-title {
+    top: calc(64px + 1rem);
+    font-family: 'Alef', sans-serif;
+    text-align: center;
+    color: $primary-text;
+    font-size: 2.5rem;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 5;
+}
+
+.page-subtitle {
+    top: calc(64px + 5rem);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: $light-blue;
+    padding-inline: 1.5rem;
+    border-radius: $button-border-radius;
+    z-index: 5;
+    color: $primary-text;
+}
+
+
+
+@media (orientation: landscape) and (min-height: 790px) {
+    .page-title {
+        font-size: 4rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.7rem;
+        top: calc(64px + 6.5rem);
+    }
+}

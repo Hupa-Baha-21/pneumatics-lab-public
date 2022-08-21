@@ -1,0 +1,222 @@
+@import 'details.scss';
+
+.home-page {
+    
+    @keyframes upAndDown {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-0.8rem);
+        }
+    
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    .white-circle {
+        width: 100vw;
+        background-color: white;
+        height: calc(100vh - 225px);
+        border-top-left-radius: 100% 3rem;
+        border-top-right-radius: 100% 3rem;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0; 
+        transform: scaleX(1.2);   
+        bottom: 0;
+        position: fixed;
+        z-index: -1;
+    }
+    
+    .btns-container {
+        margin-top: 225px;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-items: center;
+        grid-column-gap: 1rem;
+    
+        .study-btn {
+            width: 7rem;
+            padding-block: 0.5rem;
+            background-color: $primary-text;
+            color: white;
+            font-size: 1rem;
+            border-radius: $button-border-radius;
+            border: none;
+            transform: translateY(-50%);
+    
+            &:hover {
+                cursor: pointer;
+                background-color: #335772;
+            }
+        }
+    
+        .student-img {
+            max-width: 110px;
+            cursor: pointer;
+            
+            &:hover {
+                animation: upAndDown 0.6s ease-in-out infinite;
+            }
+    
+            &:active {
+                animation: upAndDown 0.6s ease-in-out infinite;
+            }
+        }
+    
+        .upAndDownAnimation {
+            animation: upAndDown 0.6s ease-in-out infinite;
+        }
+    }
+
+    .toolbox-container {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 7%;
+        position: relative;
+        width: fit-content;
+        cursor: pointer;
+        
+        &:hover {
+            opacity: 90%;
+        }
+    
+        p {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            font-size: 1.2rem;
+            transform: translate(-50%, -50%);
+            color: $primary-text;
+            font-weight: 700;
+            letter-spacing: 1px;
+            width: 100%;
+            margin: 0;
+        }
+    
+    
+        img {
+            width: 55vw;
+        }
+    
+    
+    }
+
+    
+    @media (orientation: landscape) {
+        .white-circle {
+            height: calc(100vh - 350px);
+        }
+    
+        .btns-container {
+            margin: 0 auto;
+            margin-top: 350px;
+
+            .student-img {
+                width: unset;
+                max-width: unset;
+                height: calc(45vh/2);
+                width: 20vh;
+                object-fit: cover;
+                object-position: 0% 0%;
+
+            }
+        }
+
+        .toolbox-container {
+            margin-top: 1.5rem;
+
+            img {
+                height: 17vh;
+                width: unset;
+            }
+
+            p {
+                font-size: 2rem;
+            }
+        }
+    }
+    
+    
+    
+    
+    @media (orientation: landscape) and (min-height: 790px) {
+    
+        .btns-container {
+            column-gap: 2rem;
+            width: 50vw;
+    
+    
+            .study-btn {
+                width: 13rem;
+                font-size: 2rem;
+            }
+        }
+
+    }
+    
+    
+    @media (orientation: landscape) and (max-height: 790px) {
+    
+        .white-circle {
+            height: calc(100vh - 250px);
+        }
+        
+        .btns-container {
+            margin-top: 250px;
+            width: 50vw;
+        }
+    }
+    
+    @media (max-height: 585px) {
+        .student-img {
+            display: none;
+        }
+
+        .toolbox-container {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 319px) {
+        .btns-container {
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+            
+            .student-img {
+                display: none;
+            }
+        }
+    
+    }
+
+    // tablets & ipads
+    @media (orientation: portrait) and (min-width: 768px) {
+
+        .btns-container {
+            .study-btn {
+                width: 11rem;
+                font-size: 2rem;
+            }
+
+            .student-img {
+                max-width: 200px;
+            }
+        }
+
+        .toolbox-container {
+
+            img {
+                width: 45vw;
+            }
+            
+            p {
+                font-size: 2rem;
+            }
+        }
+
+    }
+}
+

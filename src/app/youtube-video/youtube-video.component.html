@@ -1,0 +1,4 @@
+<div class="youtube-video-container">
+    <div *ngIf="videoData.letters" dir="ltr" class="video-letters">{{ videoData.letters }}</div>
+    <iframe id="iframe" class="youtube-video" [src]="safeURL" frameborder="0" allowfullscreen></iframe>
+</div>

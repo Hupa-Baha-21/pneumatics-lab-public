@@ -1,0 +1,26 @@
+@import "details.scss";
+
+.youtube-video-container {
+    width: 100%;
+    border-radius: 22px;
+    background-color: $bg-blue;
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 0.7rem;
+    box-sizing: border-box;
+    justify-content: center;
+
+    .video-letters {
+        text-align: center;
+        padding-bottom: 0.7rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .youtube-video {
+        border: 10px solid $light-blue;
+        border-radius: 22px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+}

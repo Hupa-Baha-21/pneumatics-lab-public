@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="experiment-steps">
+    <div class="page-title">{{ experiment.name }}</div>
+    <div class="page-subtitle">מהלך הניסוי</div>
+    <div class="top-blue-circle"></div>
+    <div class="white-bg">
+    </div>
+    <div class="bottom-blue-circle"></div>
+    <div class="content">
+        <div class="content-container">
+            <div class="steps-container">
+                <div *ngFor="let step of experiment.experimentInfo?.steps, index as i">
+                    <div class="step-container">
+                        <span class="step-num">{{ i + 1 }}</span>
+                        <span class="step-content">{{ step }}</span>
+                        <div *ngIf="step === 'תרשים חצים'" class="arrow-sketch">
+                            <app-expandable-img [experiment]="experiment.title" [imgFolder]="'arrowSketches'"></app-expandable-img>
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let comment of experiment.experimentInfo?.comments">
+                    <div class="step-container">
+                        <span class="step-num step-comment material-symbols-outlined">emergency</span>
+                        <span class="step-content">{{ comment }}</span>
+                    </div>
+                </div>
+            </div>
+            <app-expandable-img [experiment]="experiment.title" [imgFolder]="'sketches'"></app-expandable-img>
+            <div class="videos-container">
+                <app-youtube-video *ngFor="let video of experiment.experimentInfo?.videos" [videoData]="video"></app-youtube-video>
+            </div>
+        </div>
+    </div>
+
+    <app-back-btn></app-back-btn>
+</div>
